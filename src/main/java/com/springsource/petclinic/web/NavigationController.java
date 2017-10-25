@@ -5,12 +5,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-@RequestMapping("/")
 @Controller
 public class NavigationController {
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping("/second")
+    public String showService(Model model) {
+        model.addAttribute("date", "second");
+        return "main";
+    }
+    @RequestMapping("/")
     public String showMain(Model model) {
-        model.addAttribute("date", "asdasdsa");
+        model.addAttribute("date", "main");
         return "main";
     }
 }
