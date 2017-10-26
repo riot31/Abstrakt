@@ -10,7 +10,7 @@ public class NavigationController {
     @RequestMapping("/second")
     public String showService(Model model) {
         model.addAttribute("date", "second");
-        return "main";
+        return "google";
     }
     @RequestMapping("/")
     public String showMain(Model model) {
