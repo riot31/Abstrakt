@@ -3,18 +3,10 @@ import org.springframework.social.linkedin.api.Companies;
 import org.springframework.social.linkedin.api.Company;
 import org.springframework.social.linkedin.api.LinkedIn;
 import org.springframework.social.linkedin.api.impl.LinkedInTemplate;
-import org.springframework.social.linkedin.connect.LinkedInServiceProvider;
-import org.springframework.social.oauth2.OAuth2Operations;
-import org.springframework.social.oauth2.OAuth2Template;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
 
 
@@ -41,7 +33,7 @@ public class NavigationController {
 
     @RequestMapping("/linkedin")
     public String showLinkedin(Model model) {
-        LinkedIn linkedin = new LinkedInTemplate(token);
+        LinkedIn linkedin = new LinkedInTemplate(ACC_KEY);
         Companies comp = linkedin.companyOperations().search("jetbi.com");
 
         List<Company> companyList = comp.getCompanies();
@@ -49,13 +41,6 @@ public class NavigationController {
         return "linkedin";
     }
 
-
-
-    public NavigationController() {
-        LinkedInServiceProvider serviceProvider = new LinkedInServiceProvider(ACC_KEY, ACC_SECRET);
-        OAuth2Operations template = serviceProvider.getOAuthOperations();
-        this.token = template.authenticateClient().getAccessToken();
-    }
 
 
 
