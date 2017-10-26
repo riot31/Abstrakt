@@ -45,7 +45,7 @@
     }
 </script>
 <script type="text/javascript" src="http://platform.linkedin.com/in.js">
-    api_key: '771efm4ji87uw6'
+    api_key: 771efm4ji87uw61
     onLoad: invite
     authorize: true
 </script>
