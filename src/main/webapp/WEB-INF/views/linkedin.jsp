@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: jbUser
@@ -11,44 +12,26 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    function invite() {
-        var url = '/people/~/mailbox',
-            body = {
-                recipients: {
-                    values: [{
-                        person: {
-                            _path: '/people/email=a_user@domain.com',
-                            'first-name':'Andrew',
-                            'last-name':'User'
-                        }
-                    }]
-                },
-                subject: 'Invitation to connect.',
-                body: 'Say yes!',
-                'item-content':{
-                    'invitation-request':{
-                        'connect-type':'friend'
-                    }
-                }
-            };
-        IN.API.Raw()
-            .url(url)
-            .method("POST")
-            .body(JSON.stringify(body))
-            .result(function (result) {
-                console.log(result);
-            })
-            .error(function (error) {
-                console.log(error);
-            });
-    }
-</script>
-<script type="text/javascript" src="http://platform.linkedin.com/in.js">
-    api_key: 771efm4ji87uw61
-    onLoad: invite
-    authorize: true
-</script>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>UniversalName</td>
+        <td>WebSiteUrl</td>
+        <td>EmailDomain</td>
+    </tr>
+    <c:forEach var="item" items="${companyList}" varStatus="comp">
+        <tr>
+            <td>${comp.id}</td>
+            <td>${comp.Name}</td>
+            <td>${comp.UniversalName}</td>
+            <td>${comp.WebsiteUrl}</td>
+            <td>${comp.EmailDomains}</td>
+        </tr>
+    </c:forEach>
+
+</table>
+
 
 <div id="search">
 
