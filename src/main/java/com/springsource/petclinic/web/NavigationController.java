@@ -7,14 +7,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class NavigationController {
-    @RequestMapping("/second")
+    @RequestMapping("/google")
     public String showService(Model model) {
         model.addAttribute("date", "second");
         return "google";
     }
+
     @RequestMapping("/")
     public String showMain(Model model) {
         model.addAttribute("date", "main");
         return "main";
+    }
+
+    @RequestMapping("/linkedin")
+    public String showLinkedin() {
+        return "linkedin";
     }
 }

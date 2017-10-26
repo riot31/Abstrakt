@@ -13,9 +13,6 @@
 <body>
 
 
-
-
-
 <div id="search">
     <script>
         (function() {
