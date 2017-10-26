@@ -20,4 +20,19 @@
             <value>.jsp</value>
         </property>
     </bean>
+
+    <bean id="connectionFactoryLocator" class="org.springframework.social.connect.support.ConnectionFactoryRegistry">
+        <property name="connectionFactories">
+            <list>
+                <bean class="org.springframework.social.linkedin.connect.LinkedInConnectionFactory">
+                    <constructor-arg value="771efm4ji87uw6" />
+                    <constructor-arg value="UOht0NEI1yvDld8Z" />
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+
+
+
 </beans>
