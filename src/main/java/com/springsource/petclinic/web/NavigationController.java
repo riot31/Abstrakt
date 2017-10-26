@@ -36,14 +36,15 @@ public class NavigationController {
     public String showLinkedin(Model model) {
         LinkedIn linkedin = new LinkedInTemplate(token);
         Companies comp = linkedin.companyOperations().search("jetbi.com");
-        if(token == null)
-            getToken();
+
         List<Company> companyList = comp.getCompanies();
         model.addAttribute("companyList", companyList);
         return "linkedin";
     }
 
-    private void getToken() {
+
+
+    public NavigationController() {
         LinkedInServiceProvider serviceProvider = new LinkedInServiceProvider(ACC_KEY, ACC_SECRET);
         OAuth2Operations template = serviceProvider.getOAuthOperations();
         this.token = template.authenticateClient().getAccessToken();
