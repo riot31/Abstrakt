@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: jbUser
@@ -20,15 +20,6 @@
         <td>WebSiteUrl</td>
         <td>EmailDomain</td>
     </tr>
-    <c:forEach var="item" items="${companyList}" varStatus="comp">
-        <tr>
-            <td>${comp.id}</td>
-            <td>${comp.Name}</td>
-            <td>${comp.UniversalName}</td>
-            <td>${comp.WebsiteUrl}</td>
-            <td>${comp.EmailDomains}</td>
-        </tr>
-    </c:forEach>
 
 </table>
 
