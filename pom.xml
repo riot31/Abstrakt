@@ -318,11 +318,6 @@
             <artifactId>postgresql</artifactId>
             <version>9.1-901-1.jdbc4</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>5.0.1.RELEASE</version>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
